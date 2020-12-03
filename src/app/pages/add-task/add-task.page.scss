@@ -1,0 +1,31 @@
+ion-grid {
+	--ion-grid-width: 100%;
+	--ion-grid-padding: 7%;
+	height: 70%;
+	> ion-row {
+		height: 100%;
+		max-height: 100%;
+		> ion-col {
+			--ion-grid-colums: 12;
+			--ion-grid-column-padding: none;
+			height: unset;
+		}
+	}
+}
+:host {
+	ion-item.input {
+		--border-color: var(--ion-color-skyblue);
+		--border-radius: 5px;
+		--border-width: 1px 1px 1px 1px;
+		--highlight-color-invalid: red;
+		--highlight-color-valid: green;
+		--padding-start: 16px;
+		--padding-end: 16px;
+	}
+}
+ion-item.sized-box {
+	box-sizing: content-box;
+	--min-height: 31px;
+	padding: 0.9vh;
+	--border-radius: 5px;
+}

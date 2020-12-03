@@ -1,0 +1,33 @@
+<ion-content [fullscreen]="true" slot="fixed">
+	<ion-col size="12" style="top: 6vh;">
+		<ion-item lines="none">
+			<ion-button (click)="popMe()" fill="clear" slot="end" class="button-transparent">
+				<ion-icon slot="icon-only" name="close" size="large" color="dark"></ion-icon>
+			</ion-button>
+		</ion-item>
+	</ion-col>
+	<ion-grid>
+		<ion-row class="ion-justify-content-center ion-align-items-center">
+			<ion-col size="12">
+				<h1 class="ion-text-center"><strong>Create ToDo List</strong></h1>
+				<br />
+				<ion-item lines="none" class="input">
+					<ion-input type="text" placeholder="Task Name?" autofocus="true" enterkeyhint="done" inputmode="text"
+						size="text" [(ngModel)]="taskName"></ion-input>
+				</ion-item>
+				<br />
+				<ion-row class="wrap" class="ion-justify-content-between">
+					<ion-col *ngFor="let color of colorList">
+						<ion-item [color]="color" class="sized-box" type="button" lines="none" button="true"
+							(click)="activeColorFn(color)"></ion-item>
+					</ion-col>
+				</ion-row>
+				<br />
+				<ion-button expand="block" fill="solid" size="default" [color]="activeColor"
+					style="min-height: 51px; font-size: large;" (click)="addTask()">
+					<ion-label class="ion-text-capitalize">Create</ion-label>
+				</ion-button>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>

@@ -1,0 +1,38 @@
+<ion-content [fullscreen]="true" slot="fixed">
+	<ion-grid slot="fixed">
+		<ion-row style="height: 100%;" class="ion-justify-content-around">
+			<ion-col size="12" class="ion-align-self-start">
+				<ion-item lines="none">
+					<h1 slot="start"><strong>{{task?.name}}</strong></h1>
+					<ion-button (click)="popMe()" fill="clear" slot="end" class="button-transparent">
+						<ion-icon slot="icon-only" name="close" size="large" color="dark"></ion-icon>
+					</ion-button>
+				</ion-item>
+				<ion-item class="input">
+					{{task?.pending}} of {{task?.total}} tasks
+				</ion-item>
+				<ion-list>
+
+					<ion-item *ngFor="let subtask of task?.subTask" lines="none" button="true"
+						(click)="taskStatusUpdate(subtask)">
+						<ion-label class="ion-text-capitalize"><span [class.active]="subtask.isComp">{{subtask?.name}}</span>
+						</ion-label>
+						<ion-checkbox slot="start" [value]="subtask?.isComp" mode="md" [checked]="subtask?.isComp"></ion-checkbox>
+					</ion-item>
+				</ion-list>
+
+			</ion-col>
+			<ion-col class="ion-align-self-end" size="12">
+
+				<ion-item lines="none" class="input-align">
+					<ion-input type="text" placeholder="Add?" autofocus="true" enterkeyhint="done" inputmode="text"
+						size="text" [(ngModel)]="inputVal" #inputRef>
+					</ion-input>
+					<ion-button fill="clear" class="button-transparent" (click)="addSubTask()">
+						<ion-icon slot="icon-only" name="add" color="skyblue"></ion-icon>
+					</ion-button>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>

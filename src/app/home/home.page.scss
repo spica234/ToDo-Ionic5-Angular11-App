@@ -1,0 +1,37 @@
+ion-row {
+	height: 100% !important;
+	> ion-col {
+		height: unset;
+		width: 100%;
+	}
+}
+
+h1.line {
+	width: 100%;
+	text-align: center;
+	border-bottom: 1.5px solid var(--ion-color-grey);
+	line-height: 0.1em;
+	margin: 10% 0;
+}
+h1.line strong {
+	background: #fff;
+	padding: 0 20%;
+}
+ion-grid {
+	--ion-grid-width: 100%;
+	--ion-grid-padding: 0;
+	> ion-row {
+		width: 100%;
+	}
+}
+h2.large {
+	font-size: 3rem;
+	padding-top: 5px;
+}
+h1.large {
+	font-size: 1rem;
+	padding: 0;
+}
+ion-text {
+	font-size: 0.8rem;
+}

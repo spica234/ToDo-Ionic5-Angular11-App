@@ -1,0 +1,40 @@
+<ion-content [fullscreen]="true">
+	<ion-row class="ion-justify-content-center ion-align-items-center">
+		<ion-col size="12">
+			<h1 class="line">
+				<strong>Todo <span style="color: var(--ion-color-success);">List</span></strong>
+			</h1>
+			<ion-item class="ion-text-center" lines="none">
+				<ion-label>
+					<ion-button fill="outline" color="light" strong="true" color="skyblue" style="height: 45px;" (click)='navigateTo("/add-task")'>
+						<ion-icon name="add-sharp" slot="icon-only" color="success"></ion-icon>
+					</ion-button>
+					<h3 style="color: var(--ion-color-success);">Add List</h3>
+				</ion-label>
+			</ion-item>
+			<ion-grid>
+				<ion-row class="nowrap">
+					<ion-col *ngFor="let todo of (todoList | async)" size="6" [style.--background]="getColor(todo?.color)">
+						<ion-card [style.--background]="getColor(todo?.color)" button="true" (click)="addSubTask(todo)">
+							<ion-card-content [style.--background]="getColor(todo?.color)">
+								<ion-item lines="none" class="ion-text-center ion-no-padding" [style.--background]="getColor(todo?.color)">
+									<ion-label color="light" [style.--background]="getColor(todo?.color)">
+										<h1 class="large"><strong>{{todo?.name}}</strong></h1>
+										<h2 class="large"><strong>{{todo?.pending}}</strong></h2>
+										<ion-text>
+											Remaining
+										</ion-text>
+										<h2 class="large"><strong>{{todo?.completed}}</strong></h2>
+										<ion-text>
+											Completed
+										</ion-text>
+									</ion-label>
+								</ion-item>
+							</ion-card-content>
+						</ion-card>
+					</ion-col>
+				</ion-row>
+			</ion-grid>
+		</ion-col>
+	</ion-row>
+</ion-content>

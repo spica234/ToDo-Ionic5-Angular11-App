@@ -1,0 +1,18 @@
+{
+  "name": "demo",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "save": true,
+  "autosave": true,
+  "auto-save": true,
+  "fetch": true,
+  "auto-fetch": true,
+  "autofetch": true,
+  "color": true,
+  "verbose": true,
+  "info": true,
+  "cmd": "C:\\Program Files\\git\\bin\\bash.exe",
+  "watch":true
+}

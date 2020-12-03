@@ -1,0 +1,20 @@
+{
+	"android": {
+		"debug": {
+			"keystore": "./todo.keystore",
+			"storePassword": "123456789",
+			"alias": "todo",
+			"password": "123456789",
+			"keystoreType": "",
+			"v2SigningEnabled": true
+		},
+		"release": {
+			"keystore": "./todo.keystore",
+			"storePassword": "123456789",
+			"alias": "todo",
+			"password": "123456789",
+			"keystoreType": "",
+			"v2SigningEnabled": true
+		}
+	}
+}
